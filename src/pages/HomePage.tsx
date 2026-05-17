@@ -29,7 +29,7 @@ function HeroVisual() {
     <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.9 }} className="relative mx-auto h-[390px] w-full max-w-[560px]">
       <motion.div animate={{ rotate: 360 }} transition={{ duration: 22, repeat: Infinity, ease: 'linear' }} className="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full border border-cyan-200/20" />
       <motion.div animate={{ rotate: -360 }} transition={{ duration: 35, repeat: Infinity, ease: 'linear' }} className="absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10" />
-      <div className="ring-cinematic absolute left-1/2 top-1/2 h-60 w-60 -translate-x-1/2 -translate-y-1/2" />
+      <img src="/favicon.svg" alt="OULENCU Smart Ring product" className="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 object-contain drop-shadow-[0_30px_80px_rgba(56,189,248,0.35)]" />
       {[
         ['Sleep Score', '88', 'left-2 top-8'],
         ['Heart Rate', '62 bpm', 'right-2 top-12'],
@@ -69,6 +69,21 @@ export default function HomePage() {
       </section>
 
       <section className="border-y border-white/10 bg-slate-950/90"><div className="container-padded grid grid-cols-2 gap-4 py-6 text-sm md:grid-cols-5">{trust.map((t) => <div key={t} className="flex items-center gap-2 text-slate-300"><ShieldCheck size={16} className="text-cyan-300" />{t}</div>)}</div></section>
+
+
+
+      <section className="container-padded py-20">
+        <div className="grid gap-6 lg:grid-cols-[1.1fr_1fr] items-center">
+          <div>
+            <p className="text-xs uppercase tracking-[0.2em] text-cyan-300">Product Showcase</p>
+            <h2 className="section-title mt-3">Premium Design, Cinematic Presentation</h2>
+            <p className="section-copy max-w-2xl">Redesigned around your uploaded product artwork for a cleaner luxury-tech presentation with stronger visual balance and hierarchy.</p>
+          </div>
+          <motion.div initial={{opacity:0,y:16}} whileInView={{opacity:1,y:0}} viewport={{once:true}} className="premium-card p-6">
+            <img src="/favicon.svg" alt="OULENCU Smart Ring angle" className="mx-auto h-56 w-56 object-contain" />
+          </motion.div>
+        </div>
+      </section>
 
       <section id="features" className="container-padded py-24"><h2 className="section-title">Everything You Need for Everyday Wellness</h2><p className="section-copy max-w-3xl">Designed with premium materials and modern wellness intelligence, the OULENCU experience brings your daily metrics into one calm, cinematic view.</p><div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">{featureCards.map((f, i) => <motion.article key={f.title} whileHover={{ y: -8, scale: 1.01 }} className="premium-card group p-7" initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ delay: i * 0.06 }}><f.icon className="text-cyan-300 transition group-hover:text-white" /><h3 className="mt-4 text-xl font-semibold text-white">{f.title}</h3><p className="mt-2 text-slate-300">{f.copy}</p></motion.article>)}</div></section>
 
